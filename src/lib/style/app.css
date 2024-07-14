@@ -6,3 +6,7 @@
 body {
 	font-family: 'Noto Sans Variable', sans-serif;
 }
+
+.default-page {
+	@apply flex h-screen justify-center lg:items-center  bg-gradient-to-r lg:my-0 py-[120px] from-gray-50 to-[#d2d6db];
+}
