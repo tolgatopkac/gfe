@@ -1,21 +1,33 @@
-<script>
+<script lang="ts">
 	import { TestimonialProfileImg } from '$lib/assets';
+	import type { TestimonialCardType } from '$lib/shared/types/testimonialCard';
+
+	const {
+		testimonial
+	}: {
+		testimonial: TestimonialCardType;
+	} = $props();
 </script>
 
 <section id="testimonial-card">
-	<div
-		class="flex flex-col gap-2 p-6 bg-white ring ring-neutral-200 rounded-lg drop-shadow-sm max-w-80"
+	<figure
+		class="flex flex-col gap-2 p-6 bg-white ring ring-neutral-200 rounded-lg drop-shadow-sm w-80"
 	>
-		<div class="flex gap-4 items-center" id="profile">
-			<img class="size-12 rounded-full" src={TestimonialProfileImg} alt="Sarah Dole" />
-			<p class="flex flex-col">
-				<span class="text-neutral-900 text-lg font-semibold">Sarah Dole</span>
-				<span class="text-neutral-600 text-sm">@sarahdole</span>
+		<figcaption class="flex gap-4 items-center text-wrap" id="profile">
+			<img
+				class="size-12 rounded-full"
+				src={testimonial.profileImgSrc}
+				alt={testimonial.profileImgAlt}
+			/>
+			<p class="flex flex-col text-wrap">
+				<span class="text-neutral-900 text-lg font-semibold">{testimonial.name}</span>
+				<span class="text-neutral-600 text-sm">{testimonial.username}</span>
 			</p>
-		</div>
-		<div id="text" class="text-wrap text-neutral-600">
-			I've been searching for high-quality abstract images for my design projects, and I'm thrilled
-			to have found this platform. The variety and depth of creativity are astounding!
-		</div>
-	</div>
+		</figcaption>
+		<blockquote id="text" class="text-wrap text-neutral-600">
+			<p class="line-clamp-5">
+				{testimonial.text}
+			</p>
+		</blockquote>
+	</figure>
 </section>
