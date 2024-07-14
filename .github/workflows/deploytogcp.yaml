@@ -24,9 +24,9 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          docker build --build-arg RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}  -t us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/loot-goblin/loot-goblin-web-app:latest .
-          docker push us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/loot-goblin/loot-goblin-web-app:latest
+          docker build -t us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/portfolio/gfe:latest .
+          docker push us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/portfolio/gfe:latest
 
       - name: Deploy to Google Cloud Run
         run: |
-          gcloud run deploy loot-goblin-web-app --image us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/loot-goblin/loot-goblin-web-app:latest --platform managed --region us-central1 --allow-unauthenticated
+          gcloud run deploy gfe --image us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/portfolio/gfe:latest --platform managed --region us-central1 --allow-unauthenticated
