@@ -1,6 +1,6 @@
 <script lang="ts">
+	import ArrowRightLine from '$lib/assets/icons/ArrowRightLine.svelte';
 	import type { BlogCardType } from '$lib/shared/types/blogCardType';
-	import Icon from '@iconify/svelte';
 
 	const {
 		blogCardContent
@@ -30,7 +30,7 @@
 				class="flex items-center gap-1.5 cursor-pointer font-medium text-indigo-700 hover:text-indigo-800 transition-colors duration-300 active:ring active:ring-indigo-200 active:ring-3 active:rounded-lg active:text-indigo-800 disabled:text-neutral-400"
 			>
 				<span>Read More</span>
-				<Icon icon="ri:arrow-right-line" />
+				<ArrowRightLine width="16" height="16" />
 			</button>
 		</div>
 	</div>
