@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Favicon } from '$lib/assets/index.js';
 	import BlogCard from '$lib/components/card/BlogCard.svelte';
+	import '@fontsource-variable/noto-sans';
 
 	const { data } = $props();
 
